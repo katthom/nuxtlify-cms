@@ -31,8 +31,10 @@
 export default {
   head() {
     return {
-      script: [{ src: 'https://indentify.netlify.com/v1/netlify-identify-identity-widget.js'}],
-    };
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+      ],
+    }
   },
 };
 </script>
