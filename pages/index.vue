@@ -28,7 +28,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      script: [{ src: 'https://indentify.netlify.com/v1/netlify-identify-identity-widget.js'}],
+    };
+  },
+};
 </script>
 
 <style>
