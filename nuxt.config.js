@@ -47,5 +47,10 @@ export default {
 
   target: 'static',
 
-  
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  }
 }
