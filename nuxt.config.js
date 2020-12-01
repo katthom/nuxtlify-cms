@@ -45,7 +45,7 @@ export default {
   build: {
   },
 
-  target: 'static',
+ // target: 'static',
 
   vue: {
     config: {
