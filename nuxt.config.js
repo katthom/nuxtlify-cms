@@ -54,6 +54,7 @@ export default {
     }
   }, 
 
+  
   generate: {
     routes: function() {
       const fs = require('fs');
