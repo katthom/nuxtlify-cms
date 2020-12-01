@@ -55,6 +55,6 @@ export default {
   }, 
 
   generate: {
-    fallback: true
+    fallback: true 
   }
 }
