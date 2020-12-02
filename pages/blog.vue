@@ -1,7 +1,7 @@
 <template>
   <div>
     <li v-for="post of posts" :key="post.slug">
-      <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
+      <NuxtLink :to="post.slug">{{ post.title }}</NuxtLink>
     </li>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     const posts = await $content("blog").fetch();
 
     return {posts};
-    
+
   },
 };
 </script>
