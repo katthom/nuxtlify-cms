@@ -58,12 +58,12 @@ export default {
     routes: function() {
       const fs = require('fs');
       const path = require('path');
-      return fs.readdirSync('./content/blog').map(file => {
-        return {
-          route: `/blog/${path.parse(file).name}`, //return the slug
-          payload: require(`./content/blog/${file}`),
-        };
-      });
+      //return fs.readdirSync('./content/blog').map(file => {
+      //  return {
+      //    route: `/blog/${path.parse(file).name}`, //return the slug
+      //    payload: require(`./content/blog/${file}`),
+       // };
+     // });
     },
   },
   
