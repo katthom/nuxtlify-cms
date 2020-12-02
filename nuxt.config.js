@@ -46,6 +46,7 @@ export default {
   },
 
   target: 'static',
+  mode: 'universal',
 
   vue: {
     config: {

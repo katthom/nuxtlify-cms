@@ -17,8 +17,8 @@ export default {
     }
 
     return {
-      post,
-    };
-  },
-};
+      post
+    }
+  }
+}
 </script>
