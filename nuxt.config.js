@@ -1,11 +1,3 @@
-import glob from 'glob'
-
-import path from 'path'
-
-var dynamicRoutes = getDynamicPaths({
-  '/blog' : 'blog/*.md'
-})
-
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -61,11 +53,8 @@ export default {
       productionTip: false,
       devtools: true
     }
-  }, 
-
-  generate:{
-    routes: dynamicRoutes
   },
+  
 
   
   // generate: {
@@ -83,17 +72,4 @@ export default {
   
 }
 
-/**
- * Create an array of URLs from a list of files
- * @param {*} urlFilepathTable
- */
-function getDynamicPaths(urlFilepathTable) {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      var filepathGlob = urlFilepathTable[url];
-      return glob
-        .sync(filepathGlob, { cwd: 'content' })
-        .map(filepath => `${url}/${path.basename(filepath, '.md')}`);
-    })
-  );
-  }
+
