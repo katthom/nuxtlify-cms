@@ -1,3 +1,11 @@
+import glob from 'glob'
+import path from 'path'
+
+var dynamicRoutes = getDynamicPaths({
+  '/blog' : 'blog/*.md'
+})
+
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -54,17 +62,37 @@ export default {
     }
   }, 
 
-  generate: {
-    routes: function() {
-      const fs = require('fs');
-      const path = require('path');
-      return fs.readdirSync('./content/blog').map(file => {
-        return {
-          route: `/blog/${path.parse(file).name}`, 
-          payload: (`./content/blog/${file}`)
-        }
-      });
-    }
-  }
+  generate:{
+    routes: dynamicRoutes
+  },
+
+  
+  // generate: {
+  //   routes: function() {
+  //     const fs = require('fs');
+  //     const path = require('path');
+  //     return fs.readdirSync('./content/blog').map(file => {
+  //       return {
+  //         route: `/blog/${path.parse(file).name}`, 
+  //         payload: require(`./content/blog/${file}`)
+  //       }
+  //     });
+  //   }
+  // }
   
 }
+
+/**
+ * Create an array of URLs from a list of files
+ * @param {*} urlFilepathTable
+ */
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map(url => {
+      var filepathGlob = urlFilepathTable[url];
+      return glob
+        .sync(filepathGlob, { cwd: 'content' })
+        .map(filepath => `${url}/${path.basename(filepath, '.md')}`);
+    })
+  );
+  }
