@@ -55,6 +55,9 @@ export default {
     }
   },
   
+  generate: {
+    fallback: true
+  }
 
   
   // generate: {
