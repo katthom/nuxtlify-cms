@@ -1,4 +1,5 @@
 import glob from 'glob'
+
 import path from 'path'
 
 var dynamicRoutes = getDynamicPaths({
