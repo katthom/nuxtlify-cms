@@ -55,10 +55,7 @@ export default {
     }
   },
   
-  generate: {
-    fallback: true
-  }
-
+ 
   
   // generate: {
   //   routes: function() {
