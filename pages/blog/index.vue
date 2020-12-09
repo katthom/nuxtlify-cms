@@ -9,7 +9,7 @@
 <script>
 export default {
    async asyncData({ $content }) {
-    const posts = await $content("blog").fetch();
+    const posts = await $content("articles").fetch();
 
     return {posts};
 
